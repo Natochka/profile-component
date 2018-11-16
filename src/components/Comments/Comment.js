@@ -1,12 +1,17 @@
 import React from 'react'
+import { object } from 'prop-types'
 
-function Comment() {
+function Comment({ item }) {
   return (
     <div>
-      <div>Mike Ross</div>
-      <div>Lorem ipsum comment</div>
+      <div>{item.name}</div>
+      <div>{item.text}</div>
     </div>
   )
+}
+
+Comment.propTypes = {
+  item: object.isRequired
 }
 
 export default Comment

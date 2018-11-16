@@ -1,7 +1,12 @@
 import React from 'react'
+import { object } from 'prop-types'
 
-function User() {
-  return <div>Harvey Specter</div>
+function User({ person }) {
+  return <div>{person.name}</div>
+}
+
+User.propTypes = {
+  person: object
 }
 
 export default User

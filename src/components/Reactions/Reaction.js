@@ -1,12 +1,17 @@
 import React from 'react'
+import { object } from 'prop-types'
 
-function Reaction() {
+function Reaction({ item }) {
   return (
     <div>
-      <div>121</div>
-      <div>Likes</div>
+      <div>{item.count}</div>
+      <div>{item.name}</div>
     </div>
   )
+}
+
+Reaction.propTypes = {
+  item: object
 }
 
 export default Reaction
