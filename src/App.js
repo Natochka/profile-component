@@ -1,9 +1,17 @@
-import React, { Component } from 'react'
+import React from 'react'
+import styled from 'styled-components'
+import Header from './components/Header'
+import Comments from './components/Comments'
 
-class App extends Component {
-  render() {
-    return <div className="App" />
-  }
+function App() {
+  return (
+    <Profile>
+      <Header />
+      <Comments />
+    </Profile>
+  )
 }
+
+const Profile = styled.section``
 
 export default App
