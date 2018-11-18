@@ -29,5 +29,5 @@ export const pageCommon = {
 
 export const boxShadow = {
   boxShadow: '0px 0px 4px 0px #ACACAC',
-  borderRadius: '10px'
+  borderRadius: '5px'
 }

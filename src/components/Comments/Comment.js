@@ -3,13 +3,12 @@ import { object } from 'prop-types'
 import styled from 'styled-components'
 import { colors } from '../../styles/common-style'
 import RelativeDate from '../RelativeDate'
+import Avatar from '../Avatar'
 
 function Comment({ item }) {
   return (
     <Wrapper>
-      <CommentAvatar>
-        <img alt={item.name} src={item.avatar} width="100%" height="100%" />
-      </CommentAvatar>
+      <AvatarWrapper item={item} size={40} />
       <CommentWrapper>
         <CommentHeader>
           <CommentName>{item.name}</CommentName>
@@ -33,13 +32,8 @@ const Wrapper = styled.div`
     padding-top: 5px;
   }
 `
-const CommentAvatar = styled.div`
-  width: 40px;
-  height: 40px;
-  flex: 0 0 40px;
+const AvatarWrapper = styled(Avatar)`
   margin-right: 11px;
-  border-radius: 50%;
-  overflow: hidden;
 `
 const CommentWrapper = styled.div`
   flex: 1;

@@ -16,10 +16,11 @@ function App() {
 const Profile = styled.section`
   ${pageCommon};
   height: 100vh;
-  padding: 0 17px;
+  padding: 35px 17px 17px;
   display: flex;
   flex-direction: column;
   background-image: linear-gradient(#002c71 95px, #fff 95px);
+  box-sizing: border-box;
 `
 
 export default App

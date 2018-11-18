@@ -1,6 +1,7 @@
 import React, { PureComponent } from 'react'
 import { connect } from 'react-redux'
-import { array } from 'prop-types'
+import { object } from 'prop-types'
+import styled from 'styled-components'
 import Reaction from './Reaction'
 import { loadReactions } from '../../actions/reactions'
 
@@ -12,18 +13,23 @@ class Reactions extends PureComponent {
   render() {
     const { data } = this.props
     return (
-      <div>
-        {data.map(item => (
-          <Reaction key={item.id} item={item} />
+      <Wrapper>
+        {Object.entries(data).map(([key, value]) => (
+          <Reaction key={value.id} item={value} />
         ))}
-      </div>
+      </Wrapper>
     )
   }
 }
 
 Reactions.propTypes = {
-  data: array
+  data: object
 }
+
+const Wrapper = styled.div`
+  display: flex;
+  justify-content: space-between;
+`
 
 const mapStateToProps = (state, props) => {
   return {

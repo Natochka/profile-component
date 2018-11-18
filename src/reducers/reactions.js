@@ -1,8 +1,8 @@
 import { handleActions } from 'redux-actions'
-import { getReactions, addReaction } from '../actions/reactions'
+import { getReactions, modifyReaction } from '../actions/reactions'
 
 const initialState = {
-  data: []
+  data: {}
 }
 
 export default handleActions(
@@ -11,9 +11,16 @@ export default handleActions(
       ...state,
       data: action.payload
     }),
-    [addReaction]: (state, action) => ({
+    [modifyReaction]: (state, action) => ({
       ...state,
-      data: [...state.data, action.payload]
+      data: {
+        ...state.data,
+        [action.payload]: {
+          ...state.data[action.payload],
+          count: state.data[action.payload].count + 1,
+          modified: true
+        }
+      }
     })
   },
   initialState

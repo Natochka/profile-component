@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import User from '../User'
 import Reactions from '../Reactions'
 import Button from '../Button'
+import { media, boxShadow, colors } from '../../styles/common-style'
 
 function Header({ user }) {
   return (
@@ -15,8 +16,17 @@ function Header({ user }) {
 }
 
 const Wrapper = styled.div`
-  height: 235px;
+  ${boxShadow} height: 235px;
   flex: 0 0 235px;
+  padding: 40px 20px 20px;
+  box-sizing: border-box;
+  background-color: #fff;
+  margin-bottom: 10px;
+  text-align: center;
+  position: relative;
+  ${media.min320`
+    padding: 20px 19px;
+  `};
 `
 
 export default Header

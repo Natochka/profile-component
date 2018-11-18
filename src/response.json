@@ -3,26 +3,26 @@
     "user": {
       "id": "12345",
       "name": "Harvey Specter",
-      "location- New York, USA": {},
+      "location": "New York, USA",
       "avatar": "http://i.pravatar.cc/100"
     },
-    "reactions": [
-      {
+    "reactions": {
+      "likes": {
         "id": "1",
         "name": "likes",
-        "count": "121"
+        "count": 121
       },
-      {
+      "following": {
         "id": "2",
         "name": "following",
-        "count": "723"
+        "count": 723
       },
-      {
+      "followers": {
         "id": "3",
         "name": "followers",
-        "count": "4433"
+        "count": 4433
       }
-    ],
+    },
     "comments": [
       {
         "id": "1",
