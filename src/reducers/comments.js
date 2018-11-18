@@ -13,7 +13,7 @@ export default handleActions(
     }),
     [addComment]: (state, action) => ({
       ...state,
-      data: [...state.comments, action.payload]
+      data: [...state.data, action.payload]
     })
   },
   initialState

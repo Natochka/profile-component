@@ -4,7 +4,8 @@ export const colors = {
   navy: '#002C71',
   lightBlue: '#8298B9',
   gray: '#444444',
-  orange: '#FFA640'
+  orange: '#FFA640',
+  lightGray: '#EBEBEB'
 }
 
 export const media = {

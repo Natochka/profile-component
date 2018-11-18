@@ -13,7 +13,7 @@ export default handleActions(
     }),
     [addReaction]: (state, action) => ({
       ...state,
-      data: [...state.reactions, action.payload]
+      data: [...state.data, action.payload]
     })
   },
   initialState

@@ -8,7 +8,7 @@ function Comment({ item }) {
   return (
     <Wrapper>
       <CommentAvatar>
-        <img alt={item.name} src={item.avatar} />
+        <img alt={item.name} src={item.avatar} width="100%" height="100%" />
       </CommentAvatar>
       <CommentWrapper>
         <CommentHeader>
@@ -28,7 +28,7 @@ Comment.propTypes = {
 const Wrapper = styled.div`
   display: flex;
   padding: 20px;
-  border-bottom: 1px solid #ebebeb;
+  border-bottom: 1px solid ${colors.lightGray};
   &:first-of-type {
     padding-top: 5px;
   }
@@ -40,12 +40,10 @@ const CommentAvatar = styled.div`
   margin-right: 11px;
   border-radius: 50%;
   overflow: hidden;
-  > img {
-    width: 100%;
-    height: 100%;
-  }
 `
-const CommentWrapper = styled.div``
+const CommentWrapper = styled.div`
+  flex: 1;
+`
 const CommentHeader = styled.div`
   display: flex;
   justify-content: space-between;
