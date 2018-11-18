@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { array } from 'prop-types'
 import styled from 'styled-components'
+import Transition from 'react-transition-group/Transition'
 import Comment from './Comment'
 import AddComment from './AddComment'
 import { loadComments } from '../../actions/comments'
@@ -20,6 +21,11 @@ class Comments extends Component {
     this.setState(({ showComments }) => ({ showComments: !showComments }))
   }
 
+  transitions = {
+    entering: { maxHeight: '100vh' },
+    exiting: { maxHeight: 0 }
+  }
+
   render() {
     const { data } = this.props
     const { showComments } = this.state
@@ -28,14 +34,16 @@ class Comments extends Component {
         <ButtonLink onClick={this.toggleComments}>
           {showComments ? 'Hide' : 'Show'} comments ({data.length})
         </ButtonLink>
-        {showComments ? (
-          <CommentsWrapper>
-            {data.map(item => (
-              <Comment key={item.id} item={item} />
-            ))}
-            <AddComment />
-          </CommentsWrapper>
-        ) : null}
+        <Transition in={showComments} duration={250}>
+          {state => (
+            <CommentsWrapper style={{ ...this.transitions[state] }}>
+              {data.map(item => (
+                <Comment key={item.id} item={item} />
+              ))}
+              <AddComment />
+            </CommentsWrapper>
+          )}
+        </Transition>
       </Wrapper>
     )
   }
@@ -68,6 +76,9 @@ const ButtonLink = styled.button`
 const CommentsWrapper = styled.div`
   overflow-y: scroll;
   flex: 1;
+  height: auto;
+  max-height: 100vh;
+  transition: max-height 300ms ease-in-out;
 `
 
 const mapStateToProps = (state, props) => {
