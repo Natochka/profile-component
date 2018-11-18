@@ -2,7 +2,7 @@ import React from 'react'
 import { object } from 'prop-types'
 import styled from 'styled-components'
 import { colors } from '../../styles/common-style'
-import formatDistanceStrict from 'date-fns/formatDistanceStrict'
+import RelativeDate from '../RelativeDate'
 
 function Comment({ item }) {
   return (
@@ -13,7 +13,7 @@ function Comment({ item }) {
       <CommentWrapper>
         <CommentHeader>
           <CommentName>{item.name}</CommentName>
-          <CommentDate>{formatDistanceStrict(item.published, new Date())}</CommentDate>
+          <RelativeDate date={item.published} />
         </CommentHeader>
         <CommentText>{item.text}</CommentText>
       </CommentWrapper>
@@ -57,10 +57,6 @@ const CommentName = styled.div`
 const CommentText = styled.div`
   line-height: 21px;
   color: ${colors.gray};
-`
-const CommentDate = styled.div`
-  color: ${colors.lightBlue};
-  font-size: 12px;
 `
 
 export default Comment
