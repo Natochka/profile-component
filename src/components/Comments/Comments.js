@@ -1,8 +1,10 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
 import { array } from 'prop-types'
 import styled from 'styled-components'
 import Comment from './Comment'
 import AddComment from './AddComment'
+import { loadComments } from '../../actions/comments'
 import { media, boxShadow, colors } from '../../styles/common-style'
 
 class Comments extends Component {
@@ -10,21 +12,25 @@ class Comments extends Component {
     showComments: true
   }
 
+  componentDidMount() {
+    this.props.fetchComments()
+  }
+
   toggleComments = () => {
     this.setState(({ showComments }) => ({ showComments: !showComments }))
   }
 
   render() {
-    const { items } = this.props
+    const { data } = this.props
     const { showComments } = this.state
     return (
       <Wrapper>
         <ButtonLink onClick={this.toggleComments}>
-          {showComments ? 'Hide' : 'Show'} comments ({items.length})
+          {showComments ? 'Hide' : 'Show'} comments ({data.length})
         </ButtonLink>
         {showComments ? (
           <CommentsWrapper>
-            {items.map(item => (
+            {data.map(item => (
               <Comment key={item.id} item={item} />
             ))}
             <AddComment />
@@ -36,7 +42,7 @@ class Comments extends Component {
 }
 
 Comments.propTypes = {
-  items: array.isRequired
+  data: array.isRequired
 }
 
 const Wrapper = styled.div`
@@ -64,4 +70,19 @@ const CommentsWrapper = styled.div`
   flex: 1;
 `
 
-export default Comments
+const mapStateToProps = (state, props) => {
+  return {
+    data: state.comments.data
+  }
+}
+
+const mapDispatchToProps = dispatch => {
+  return {
+    fetchComments: () => dispatch(loadComments())
+  }
+}
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Comments)

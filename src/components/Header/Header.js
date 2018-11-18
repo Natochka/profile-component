@@ -1,23 +1,17 @@
 import React from 'react'
-import { array, object } from 'prop-types'
 import styled from 'styled-components'
 import User from '../User'
 import Reactions from '../Reactions'
 import Button from '../Button'
 
-function Header({ person, reactions }) {
+function Header({ user }) {
   return (
     <Wrapper>
-      <User person={person} />
-      <Reactions data={reactions} />
+      <User />
+      <Reactions />
       <Button>follow</Button>
     </Wrapper>
   )
-}
-
-Header.propTypes = {
-  reactions: array,
-  person: object
 }
 
 const Wrapper = styled.div`
