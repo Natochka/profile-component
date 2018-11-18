@@ -22,8 +22,8 @@ class Comments extends Component {
   }
 
   transitions = {
-    entering: { maxHeight: '100vh' },
-    exiting: { maxHeight: 0 }
+    entered: { maxHeight: '100vh' },
+    exited: { maxHeight: 0 }
   }
 
   render() {
@@ -34,7 +34,7 @@ class Comments extends Component {
         <ButtonLink onClick={this.toggleComments}>
           {showComments ? 'Hide' : 'Show'} comments ({data.length})
         </ButtonLink>
-        <Transition in={showComments} duration={250}>
+        <Transition in={showComments} timeout={150}>
           {state => (
             <CommentsWrapper style={{ ...this.transitions[state] }}>
               {data.map(item => (
@@ -78,7 +78,7 @@ const CommentsWrapper = styled.div`
   flex: 1;
   height: auto;
   max-height: 100vh;
-  transition: max-height 300ms ease-in-out;
+  transition: max-height 150ms ease-in-out;
 `
 
 const mapStateToProps = (state, props) => {
