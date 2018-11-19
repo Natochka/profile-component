@@ -38,10 +38,12 @@ User.propTypes = {
 }
 
 const Wrapper = styled.div`
+  padding: 0 20px;
   ${media.min500`
     display: flex;
     text-align: left;
     align-items: center;
+    padding: 0;
   `};
 `
 const StyledAvatar = styled(Avatar)`

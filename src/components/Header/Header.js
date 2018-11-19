@@ -16,7 +16,9 @@ class Header extends PureComponent {
         <User />
         <ReactionsWrapper>
           <StyledReactions />
-          <StyledButton onClick={() => handleFollow('followers')}>follow</StyledButton>
+          <ButtonWrapper>
+            <StyledButton onClick={() => handleFollow('followers')}>follow</StyledButton>
+          </ButtonWrapper>
         </ReactionsWrapper>
       </Wrapper>
     )
@@ -31,7 +33,7 @@ const Wrapper = styled.div`
   ${boxShadow};
   height: 235px;
   flex: 0 0 235px;
-  padding: 40px 20px 20px;
+  padding: 40px 0 20px;
   box-sizing: border-box;
   background-color: #fff;
   margin-bottom: 10px;
@@ -53,6 +55,12 @@ const StyledReactions = styled(Reactions)`
   margin: 25px 0 21px;
   ${media.min500`
     margin-top: 19px;
+  `};
+`
+const ButtonWrapper = styled.div`
+  padding: 0 20px;
+  ${media.min500`
+    padding: 0;
   `};
 `
 const StyledButton = styled(Button)`

@@ -15,6 +15,7 @@ function Reaction({ item }) {
 const Wrapper = styled.div`
   border-right: solid 1px ${colors.lightGray};
   width: 33.333%;
+  padding: 0 10px;
   &:last-of-type {
     border: none;
   }
