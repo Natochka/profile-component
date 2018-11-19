@@ -19,11 +19,11 @@ class User extends PureComponent {
     const { data, handleLike } = this.props
     return (
       <Wrapper>
-        <AvatarWrapper item={data} size={AVATAR_SIZE} />
+        <StyledAvatar item={data} size={AVATAR_SIZE} />
         <div>
           <UserWrapper>
             <UserName>{data.name}</UserName>
-            <LikeIconWrapper onClick={() => handleLike('likes')} />
+            <StyledLikeIcon onClick={() => handleLike('likes')} />
           </UserWrapper>
           <UserLocation>{data.location}</UserLocation>
         </div>
@@ -38,19 +38,19 @@ User.propTypes = {
 }
 
 const Wrapper = styled.div`
-  ${media.min320`
+  ${media.min500`
     display: flex;
     text-align: left;
     align-items: center;
   `};
 `
-const AvatarWrapper = styled(Avatar)`
+const StyledAvatar = styled(Avatar)`
   position: absolute;
   top: -15%;
   left: 0;
   right: 0;
   margin: auto;
-  ${media.min320`
+  ${media.min500`
     position: initial;
     margin: 0;
     margin-right: 18px;
@@ -67,7 +67,7 @@ const UserName = styled.h1`
   color: ${colors.navy};
   margin-right: 10px;
 `
-const LikeIconWrapper = styled(LikeIcon)`
+const StyledLikeIcon = styled(LikeIcon)`
   width: 12px;
   height: 12px;
   stroke: ${colors.lightGray};

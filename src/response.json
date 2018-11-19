@@ -9,17 +9,17 @@
     "reactions": {
       "likes": {
         "id": "1",
-        "name": "likes",
+        "name": "Likes",
         "count": 121
       },
       "following": {
         "id": "2",
-        "name": "following",
+        "name": "Following",
         "count": 723
       },
       "followers": {
         "id": "3",
-        "name": "followers",
+        "name": "Followers",
         "count": 4433
       }
     },

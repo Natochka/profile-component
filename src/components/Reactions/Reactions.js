@@ -11,9 +11,9 @@ class Reactions extends PureComponent {
   }
 
   render() {
-    const { data } = this.props
+    const { data, ...rest } = this.props
     return (
-      <Wrapper>
+      <Wrapper {...rest}>
         {Object.entries(data).map(([key, value]) => (
           <Reaction key={value.id} item={value} />
         ))}
