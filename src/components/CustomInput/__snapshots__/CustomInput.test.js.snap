@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CustomInput component test input should be rendered correctly 1`] = `
+<input
+  class="sc-bdVaJa coujGS"
+/>
+`;

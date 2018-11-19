@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Button component test button should be rendered correctly 1`] = `
+<button
+  class="sc-bdVaJa hKLKUL"
+/>
+`;
+
+exports[`Button component test modal should be rendered correctly 1`] = `
+<button
+  class="sc-bdVaJa hKLKUL"
+/>
+`;
