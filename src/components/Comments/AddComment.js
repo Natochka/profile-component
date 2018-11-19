@@ -2,6 +2,7 @@ import React, { PureComponent } from 'react'
 import { connect } from 'react-redux'
 import styled from 'styled-components'
 import { func } from 'prop-types'
+import CustomInput from '../CustomInput'
 import { addCommentWithData } from '../../actions/comments'
 import { colors } from '../../styles/common-style'
 
@@ -22,7 +23,7 @@ class AddComment extends PureComponent {
   render() {
     return (
       <Wrapper onSubmit={this.handleSubmit}>
-        <CustomInput
+        <StyledCustomInput
           name="add-comment"
           placeholder="Add a comment"
           value={this.state.text}
@@ -42,14 +43,8 @@ const Wrapper = styled.form`
   padding: 20px;
 `
 
-const CustomInput = styled.input`
+const StyledCustomInput = styled(CustomInput)`
   width: 100%;
-  font-size: 18px;
-  color: ${colors.lightBlue};
-  line-height: 22px;
-  border: 0;
-  border-bottom: 2px solid ${colors.lightGray};
-  outline: none;
 `
 const mapDispatchToProps = dispatch => {
   return {
