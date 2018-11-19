@@ -80,10 +80,11 @@ const CommentsWrapper = styled.div`
   max-height: 100vh;
   transition: max-height 150ms ease-in-out;
 `
+const sortByDate = data => data.sort((a, b) => b.published - a.published)
 
 const mapStateToProps = (state, props) => {
   return {
-    data: state.comments.data
+    data: sortByDate(state.comments.data)
   }
 }
 
