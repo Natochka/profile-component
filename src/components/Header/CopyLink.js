@@ -1,18 +1,17 @@
 import React, { PureComponent } from 'react'
 import { func } from 'prop-types'
 import styled from 'styled-components'
+import Button from '../Button'
 import CustomInput from '../CustomInput'
+import CopyIcon from '../Icons/CopyIcon'
 import { boxShadow, colors } from '../../styles/common-style'
 
 class CopyLink extends PureComponent {
   copyRef = React.createRef()
 
-  componentDidMount() {
-    const ref = this.copyRef && this.copyRef.current
-
-    if (ref) {
-      requestAnimationFrame(() => ref.select())
-    }
+  handleClick = event => {
+    this.copyRef.current.select()
+    document.execCommand('copy', false, window.location.href)
   }
 
   render() {
@@ -27,6 +26,9 @@ class CopyLink extends PureComponent {
           name="copy-link"
           value={window.location.href}
         />
+        <StyledButton onClick={this.handleClick}>
+          <StyledCopyIcon />
+        </StyledButton>
       </Wrapper>
     )
   }
@@ -48,10 +50,12 @@ const Wrapper = styled.div`
   right: 0;
   top: 20%;
   margin: auto;
+  display: flex;
 `
 
 const StyledCustomInput = styled(CustomInput)`
-  width: 100%;
+  flex: 1;
+  margin-right: 20px;
 `
 const CloseButton = styled.button`
   width: 26px;
@@ -65,6 +69,14 @@ const CloseButton = styled.button`
   cursor: pointer;
   font-size: 18px;
   color: ${colors.orange};
+`
+const StyledButton = styled(Button)`
+  padding: 10px 14px;
+`
+const StyledCopyIcon = styled(CopyIcon)`
+  width: 20px;
+  height: auto;
+  fill: #fff;
 `
 
 export default CopyLink

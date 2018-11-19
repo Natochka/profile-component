@@ -12,5 +12,14 @@ const Button = styled.button`
   letter-spacing: 4px;
   outline: none;
   cursor: pointer;
+  transition: background-color 150ms ease-in-out;
+
+  &:hover {
+    background-color: #e59539;
+  }
+
+  &:hover:active {
+    background-color: #ce8633;
+  }
 `
 export default Button
