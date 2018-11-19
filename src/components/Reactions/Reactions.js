@@ -23,7 +23,7 @@ class Reactions extends PureComponent {
 }
 
 Reactions.propTypes = {
-  data: object
+  data: object.isRequired
 }
 
 const Wrapper = styled.div`

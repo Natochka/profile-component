@@ -69,7 +69,7 @@ const ButtonLink = styled.button`
   text-decoration: underline;
   cursor: pointer;
   outline: none;
-  ${media.min320`
+  ${media.min500`
     text-align: left;
   `};
 `

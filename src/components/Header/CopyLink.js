@@ -41,7 +41,7 @@ CopyLink.propTypes = {
 
 const Wrapper = styled.div`
   ${boxShadow};
-  width: 100%;
+  width: 90%;
   max-width: 500px;
   background-color: #fff;
   padding: 35px 25px;

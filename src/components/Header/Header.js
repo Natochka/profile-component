@@ -55,7 +55,7 @@ const Wrapper = styled.div`
   padding: 40px 0 20px;
   box-sizing: border-box;
   background-color: #fff;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
   text-align: center;
   position: relative;
   ${media.min500`

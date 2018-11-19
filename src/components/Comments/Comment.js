@@ -37,6 +37,7 @@ const AvatarWrapper = styled(Avatar)`
 `
 const CommentWrapper = styled.div`
   flex: 1;
+  margin-top: 10px;
 `
 const CommentHeader = styled.div`
   display: flex;
@@ -49,6 +50,7 @@ const CommentName = styled.div`
 const CommentText = styled.div`
   line-height: 21px;
   color: ${colors.gray};
+  margin-top: 5px;
 `
 
 export default Comment

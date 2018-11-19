@@ -35,7 +35,7 @@ class AddComment extends PureComponent {
 }
 
 AddComment.propTypes = {
-  handleAddComment: func
+  handleAddComment: func.isRequired
 }
 
 const Wrapper = styled.form`
