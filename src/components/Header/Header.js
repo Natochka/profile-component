@@ -28,10 +28,12 @@ class Header extends PureComponent {
         <ReactionsWrapper>
           <StyledReactions />
           <ButtonWrapper>
-            <StyledButton onClick={() => handleFollow('followers')}>follow</StyledButton>
+            <StyledButton onClick={() => handleFollow('followers')} data-testid="follow-button">
+              follow
+            </StyledButton>
           </ButtonWrapper>
         </ReactionsWrapper>
-        <StyledShareIcon onClick={this.handleShowModal} />
+        <StyledShareIcon data-testid="share-icon" onClick={this.handleShowModal} />
         {modalVisible && (
           <Modal>
             <CopyLink onClose={this.handleHideModal} />

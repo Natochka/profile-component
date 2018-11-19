@@ -25,6 +25,7 @@ class CopyLink extends PureComponent {
           ref={this.copyRef}
           name="copy-link"
           value={window.location.href}
+          data-testid="copy-url"
         />
         <StyledButton onClick={this.handleClick}>
           <StyledCopyIcon />
